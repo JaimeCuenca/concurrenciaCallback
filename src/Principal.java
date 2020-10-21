@@ -1,4 +1,4 @@
-public class Principal implements mensaje{
+public class Principal{
 
     static final int Tiempo=4;
 
@@ -9,10 +9,8 @@ public class Principal implements mensaje{
             CustomThread1 hilo1 = new CustomThread1(Tiempo);
             hilo1.run();
             hilo1.join();
-            CustomThread2 hilo2 = new CustomThread2(hilo1.num);
+            CustomThread2 hilo2 = new CustomThread2(hilo1.num, Principal ppal = new Principal());
             hilo2.run();
-            hilo2.join();
-            System.out.print(mensaje);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
